@@ -1,27 +1,29 @@
-# BrowserTemplate
+# Navigateur
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.2.
+Ce projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 19.2.14.
 
-## Development server
+Lancez la commande `npm install` pour installer les dépendances nécessaires du projet.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Serveur de développement Angular
 
-## Code scaffolding
+Exécutez `npm run start` pour lancer un serveur de développement. Accédez à « http://localhost:4200/ ». L'application se rechargera automatiquement si vous modifiez l'un des fichiers source.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Construire l'application Angular
 
-## Build
+Exécutez `npm run build` pour construire le projet. Les artefacts de construction seront stockés dans le répertoire `dist/`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Développement dans le framework electron
 
-## Running unit tests
+Exécutez `npm run start:electron` pour lancer l'environnement de développement de l'application electron. Cette commande doit être redémarrée si vous modifiez l'un des fichiers source.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Construire l'application avec le framework electron
 
-## Running end-to-end tests
+Exécutez `npm run build:mac`, `npm run build:win` ou `npm run build:linux` suivant votre système d'exploitation pour empaqueter le projet en tant qu'application autonome. L'application compilée sera disponible dans le répertoire `releases/`. Cette commande doit être redémarrée si vous modifiez l'un des fichiers source.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Exécution de tests unitaires
 
-## Further help
+Exécutez `npm run test` pour exécuter les tests unitaires via [Karma](https://karma-runner.github.io).
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Aide supplémentaire
+
+Pour obtenir plus d'aide sur la CLI angulaire, utilisez `ng help` ou consultez la page [Présentation de la CLI angulaire et référence des commandes](https://angular.io/cli).

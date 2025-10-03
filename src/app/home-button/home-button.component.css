@@ -1,0 +1,50 @@
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px; /* Largeur égale à la hauteur */
+    height: 55px; /* Hauteur égale à la largeur */
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 50%; /* Transforme le bouton en cercle */
+    cursor: pointer;
+    position: relative;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+.home-btn:hover {
+    background: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Icône maison */
+.home-icon {
+    position: relative;
+    width: 22px;
+    height: 18px;
+    background: #555;
+    border-radius: 2px;
+}
+
+.home-icon::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: -4px;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 12px solid #555;
+}
+
+.home-icon::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 7px;
+    width: 8px;
+    height: 9px;
+    background: #f0f0f0; /* porte en contraste clair */
+    border-radius: 1px;
+}
