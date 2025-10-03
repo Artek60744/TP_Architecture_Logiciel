@@ -88,4 +88,14 @@ app.whenReady().then(() => {
   win.on('resize', () => {
     fitViewToWin();
   });
+
+
+  // Listen for navigation events to sync the address bar
+  view.webContents.on('did-start-navigation', (event, url, isInPlace, isMainFrame) => {
+    if (isMainFrame) {
+      // Send the new URL to the renderer process to update the address bar
+      win.webContents.send('navigation-started', url);
+    }
+  });
+  
 })
