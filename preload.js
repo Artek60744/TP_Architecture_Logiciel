@@ -12,6 +12,10 @@ contextBridge.exposeInMainWorld('electronAPI', {
   currentUrl: () => ipcRenderer.invoke('current-url'),
 
   navigateHome: () => ipcRenderer.send('navigate-home'),
-  onNavigationStarted: (callback) => ipcRenderer.on('navigation-started', callback)
+  onNavigationStarted: (callback) => ipcRenderer.on('navigation-started', callback),
+
+  captureScreen: () => ipcRenderer.invoke('capture-screen')
+  ,
+  saveScreenshot: (dataUrl) => ipcRenderer.invoke('save-screenshot', dataUrl)
 
 })

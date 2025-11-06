@@ -6,10 +6,11 @@ import { ForwardComponent } from './forward/forward.component';
 import { RefreshComponent } from './refresh/refresh.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HomeButtonComponent } from "./home-button/home-button.component";
+import { ScreenshotButtonComponent } from "./screenshot/screenshot-button/screenshot-button.component";
 
 @Component({
     selector: 'app-root',
-    imports: [MatToolbarModule, AddressComponent, BackwardComponent, DebugComponent, ForwardComponent, RefreshComponent, HomeButtonComponent],
+    imports: [MatToolbarModule, AddressComponent, BackwardComponent, DebugComponent, ForwardComponent, RefreshComponent, HomeButtonComponent, ScreenshotButtonComponent],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })

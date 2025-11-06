@@ -1,0 +1,26 @@
+<div class="screenshot-container">
+  <button (click)="onCapture()" [disabled]="loading" class="capture-button">
+    <span *ngIf="!loading">📸 Capturer l'écran</span>
+    <span *ngIf="loading">📸 Capture en cours...</span>
+  </button>
+
+  <div *ngIf="loading" class="status loading">
+    Capture en cours, veuillez patienter...
+  </div>
+
+  <div *ngIf="error" class="status error">
+    ❌ {{ error }}
+  </div>
+
+  <div *ngIf="successMessage" class="status success">
+    ✅ {{ successMessage }}
+    <div *ngIf="savedPath" class="save-path">
+      📁 Sauvegardé dans: {{ savedPath }}
+    </div>
+  </div>
+
+  <div *ngIf="imageDataUrl" class="preview-container">
+    <h3>Aperçu de la capture:</h3>
+    <img [src]="imageDataUrl" alt="Aperçu capture" class="preview-image"/>
+  </div>
+</div>
