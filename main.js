@@ -126,16 +126,24 @@ app.whenReady().then(() => {
   });
 
   ipcMain.handle('capture-screen', async () => {
-    // Obtenir les sources d'écran (screen, window)
-    const sources = await desktopCapturer.getSources({ types: ['screen', 'window'], thumbnailSize: { width: 1920, height: 1080 }});
-    // Pour simplifier, tu peux retourner la première source (ou ouvrir un UI de sélection)
-    const src = sources[0];
-    if (!src) throw new Error('Aucune source trouvée');
-    // src.thumbnail est un NativeImage
-    const pngBuffer = src.thumbnail.toPNG();
-    // Convertir en data URL
-    const dataUrl = `data:image/png;base64,${pngBuffer.toString('base64')}`;
-    return dataUrl;
+    try {
+      // Capturer le contenu de la vue web (BrowserView)
+      const image = await view.webContents.capturePage();
+      
+      // Vérifier si l'image a été capturée
+      if (!image) {
+        throw new Error('Échec de la capture de la page web');
+      }
+
+      // Convertir l'image en format PNG puis en data URL
+      const pngBuffer = image.toPNG();
+      const dataUrl = `data:image/png;base64,${pngBuffer.toString('base64')}`;
+      
+      return dataUrl;
+    } catch (error) {
+      console.error('Erreur lors de la capture de la page:', error);
+      throw error;
+    }
   });
 
   // Save a data URL to disk using a save dialog
