@@ -6,7 +6,7 @@ app.whenReady().then(() => {
 
   // BrowserWindow initiate the rendering of the angular toolbar
   const win = new BrowserWindow({
-    width: 800,
+    width: 1080,
     height: 800,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')

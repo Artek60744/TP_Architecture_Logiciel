@@ -2,18 +2,19 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 55px; /* Largeur égale à la hauteur */
-    height: 55px; /* Hauteur égale à la largeur */
+    width: 55px;
+    height: 55px;
     background: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 50%; /* Transforme le bouton en cercle */
+    border: 1px solid transparent; /* Bordure invisible par défaut */
+    border-radius: 50%;
     cursor: pointer;
     position: relative;
-    transition: background 0.2s, box-shadow 0.2s;
+    transition: background 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
 .home-btn:hover {
     background: #e0e0e0;
+    border-color: #ccc; /* Bordure visible au survol */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -45,6 +46,6 @@
     left: 7px;
     width: 8px;
     height: 9px;
-    background: #f0f0f0; /* porte en contraste clair */
+    background: #f0f0f0;
     border-radius: 1px;
 }
